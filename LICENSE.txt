@@ -1,6 +1,14 @@
+Multiple licenses
+
+This repo is released under multiple Open Source licenses:
+- The program is released under the MIT license (see below!),
+- The images in the directory images originate from Wikimedia Commons,
+  and I retain those licenses as is for simplicity, see the file 
+  /images/LICENSE.md
+
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) 2023 Tomas Kindahl
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
