@@ -66,7 +66,7 @@ namespace DTP9_MUD_WPF_stub
             {
                 Labyrinth.DoCommand("w");
                 Title.Text = "w";
-                StoryField.Text = Labyrinth.CurrentText() + Labyrinth.Directions();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText() + "\n" + Labyrinth.Directions();
                 Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
@@ -74,7 +74,7 @@ namespace DTP9_MUD_WPF_stub
             {
                 Labyrinth.DoCommand("s");
                 Title.Text = "s";
-                StoryField.Text = Labyrinth.CurrentText() + Labyrinth.Directions();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText() + "\n" + Labyrinth.Directions();
                 Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
@@ -82,7 +82,7 @@ namespace DTP9_MUD_WPF_stub
             {
                 Labyrinth.DoCommand("a");
                 Title.Text = "a";
-                StoryField.Text = Labyrinth.CurrentText() + Labyrinth.Directions();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText() + "\n" + Labyrinth.Directions();
                 Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
@@ -90,7 +90,7 @@ namespace DTP9_MUD_WPF_stub
             {
                 Labyrinth.DoCommand("D");
                 Title.Text = "d";
-                StoryField.Text = Labyrinth.CurrentText() + Labyrinth.Directions();
+                StoryField.Text = Labyrinth.CurrentText() + "\n" + Labyrinth.WarningText() + "\n" + Labyrinth.Directions();
                 Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
