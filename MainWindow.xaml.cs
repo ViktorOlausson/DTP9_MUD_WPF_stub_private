@@ -12,9 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DTP9_MUD_WPF_stub
 {
+
     public partial class MainWindow : Window
     {
         string imgDir = "..\\..\\..\\images\\";
@@ -22,13 +24,30 @@ namespace DTP9_MUD_WPF_stub
         {
             InitializeComponent();
             // Gör all initiering nedanför den här texten!
-            Title.Text = "SIMSALABIM!";
-            StoryField.Text = "Abrakadabra\nhokus pokus\nfiliokus";
+            string title, text, warn, directions, decoration;
+
+
+            decoration = "---------------------";
+            warn = Labyrinth.WarningText();
+            title = Labyrinth.CurrentTitle();
+            text = Labyrinth.CurrentText();
+            directions = Labyrinth.Directions();
+
+            string StartText = $"{warn}\n{decoration}\n{text}\n" +
+                $"{decoration}\n{directions}\n{decoration}";
+            string Text() { return StartText; }//TODO: lägga den i Room.cs
+
+            Title.Text = title;
+            
+            StoryField.Text = Text();
             Uri img = new Uri(imgDir+"illusion.png", UriKind.RelativeOrAbsolute);
             MainImage.Source = BitmapFrame.Create(img);
         }
         private void ApplicationKeyPress(object sender, KeyEventArgs e)
         {
+            
+
+           
             string output = "Key pressed: ";
             output += e.Key.ToString();
             KeyPressDisplay.Text = output;
@@ -36,17 +55,42 @@ namespace DTP9_MUD_WPF_stub
             {
                 System.Windows.Application.Current.Shutdown();
             }
-            else if (e.Key == Key.A)
+            else if (e.Key == Key.H)
             {
-                Title.Text = "AAAAAAAAAH!";
-                StoryField.Text = "Namen aaaaah!\nÅååååh!\nÄäääää!";
+                Title.Text = Labyrinth.HelpTitle();
+                StoryField.Text = Labyrinth.HelpText();
                 Uri img = new Uri(imgDir + "illusion2.png", UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
-            else if (e.Key == Key.I)
+            else if (e.Key == Key.W)
             {
-                Title.Text = "IIIIIIIIIH!";
-                StoryField.Text = "Jasäjabah iiiiiiiih!";
+                Labyrinth.DoCommand("w");
+                Title.Text = "w";
+                StoryField.Text = Labyrinth.CurrentText() + Labyrinth.Directions();
+                Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
+                MainImage.Source = BitmapFrame.Create(img);
+            }
+            else if (e.Key == Key.S)
+            {
+                Labyrinth.DoCommand("s");
+                Title.Text = "s";
+                StoryField.Text = Labyrinth.CurrentText() + Labyrinth.Directions();
+                Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
+                MainImage.Source = BitmapFrame.Create(img);
+            }
+            else if (e.Key == Key.A)
+            {
+                Labyrinth.DoCommand("a");
+                Title.Text = "a";
+                StoryField.Text = Labyrinth.CurrentText() + Labyrinth.Directions();
+                Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
+                MainImage.Source = BitmapFrame.Create(img);
+            }
+            else if (e.Key == Key.D)
+            {
+                Labyrinth.DoCommand("D");
+                Title.Text = "d";
+                StoryField.Text = Labyrinth.CurrentText() + Labyrinth.Directions();
                 Uri img = new Uri(imgDir + "winterbath.png", UriKind.RelativeOrAbsolute);
                 MainImage.Source = BitmapFrame.Create(img);
             }
