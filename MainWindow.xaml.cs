@@ -46,7 +46,7 @@ namespace DTP9_MUD_WPF_stub
         private void ApplicationKeyPress(object sender, KeyEventArgs e)
         {
             
-
+            
            
             string output = "Key pressed: ";
             output += e.Key.ToString();
